@@ -1,4 +1,4 @@
-Package: ScisorWiz_Dondi
+Package: ScisorWizDondi
 Type: Package
 Title: Visualizes isoforms of a gene across multiple cell types
 Version: 1.2.0.1
