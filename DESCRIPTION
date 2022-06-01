@@ -1,7 +1,7 @@
-Package: ScisorWiz
+Package: ScisorWiz_Dondi
 Type: Package
 Title: Visualizes isoforms of a gene across multiple cell types
-Version: 1.2.0.0
+Version: 1.2.0.1
 Author: Alexander Stein
 Maintainer: Alexander Stein <ans4013@med.cornell.edu>
 Description: The ScisorWiz package visualizes single-cell RNA long-read 

@@ -135,7 +135,8 @@ IDs = []
 for line in allInfo:
     columns = line.strip().split()
     if geneID in columns[1]:
-        readID = columns[2] + ":" + columns[3] + ":" + columns[0]
+        celltype = columns[2].split('_')[-1]
+        readID = celltype + ":" + columns[3] + ":" + columns[0]
         if len(columns) > 9:
             exonChain = columns[8].split(";%;")
         else:
@@ -959,3 +960,4 @@ for cType in cellType:
 
 cellType.close()
 ucscRefOutput.close()
+

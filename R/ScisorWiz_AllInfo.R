@@ -42,7 +42,7 @@
 #' @export
 
 ScisorWiz_AllInfo <- function(gencodeAnno, AllInfoInput, cellTypeFile, gene,
-                              cluster=1, ci=.05, mismatchCutoff=.05, outputDir,
+                              cluster=1, ci=.05, analysisType="Ctype", mismatchCutoff=.05, outputDir,
                               mismatchFile=NULL, zoom="n", interactive = "n") {
   cat("=================== Handling arguments ===================\n")
 
@@ -93,8 +93,14 @@ ScisorWiz_AllInfo <- function(gencodeAnno, AllInfoInput, cellTypeFile, gene,
   }
 
   cat("================= Running python script ==================\n")
-  py_file <- system.file("python", "ClusterByIsoform_AllInfoInput.py",
+  if(analysisType=="Original"){
+    py_file <- system.file("python", "ClusterByIsoform_AllInfoInput_original.py",
                          package = "ScisorWiz")
+  }
+  else{
+    py_file <- system.file("python", "ClusterByIsoform_AllInfoInput.py",
+                         package = "ScisorWiz")
+  }
   if(!is.null(mismatchFile)){
     runPy <- paste("python3", py_file, gencodeAnno, AllInfoInput, cellTypeFile,
                    gene, ci, outputDir, mismatchFile)
