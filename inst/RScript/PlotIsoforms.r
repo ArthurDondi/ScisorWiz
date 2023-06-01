@@ -39,6 +39,10 @@ getClustering<-function(a, m, cluster, num) {
         if(cluster == "all") {
             a <- a[order(a[,10], a[,13], a[,14]),]
         }
+        if(cluster == "allreverse") {
+            a <- a[order(a[,10], a[,14], a[,13],),]
+        }
+
         
         # Get only reads that match readID. If number of reads is >75, randomly
         # choose 75 reads to plot
@@ -648,6 +652,10 @@ if(cluster == 3){
 if(cluster == 4){
     cluster = "all"
 }
+if(cluster == 5){
+    cluster = "allreverse"
+}
+
 cat("Cluster method =", cluster, "\n")
 
 CI=args[11];
